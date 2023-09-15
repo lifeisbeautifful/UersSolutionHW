@@ -37,14 +37,7 @@ public class Program
         Console.WriteLine("Enter first name: ");
         string firstName = Console.ReadLine();
 
-        while (int.TryParse(firstName, out int result) || string.IsNullOrWhiteSpace(firstName))
-        {
-            Console.WriteLine("first name cannot be empty or contain numbers.");
-            Console.WriteLine("Enter first name:");
-            firstName = Console.ReadLine();
-        }
-
-        return firstName;
+        return GetName(firstName);
     }
 
     public static string GetLastName()
@@ -52,13 +45,18 @@ public class Program
         Console.WriteLine("Enter last name: ");
         string lastName = Console.ReadLine();
 
-        while (int.TryParse(lastName, out int result) || string.IsNullOrWhiteSpace(lastName))
+        return GetName(lastName);
+    }
+
+    private static string GetName(string name)
+    {
+        while (int.TryParse(name, out int result) || string.IsNullOrWhiteSpace(name))
         {
-            Console.WriteLine("last name cannot be empty or contain numbers.");
-            Console.WriteLine("Enter last name: ");
-            lastName = Console.ReadLine();
+            Console.WriteLine("first/last name cannot be empty or contain numbers.");
+            Console.WriteLine("Enter first/last name: ");
+            name = Console.ReadLine();
         }
 
-        return lastName;
+        return name;
     }
 }
