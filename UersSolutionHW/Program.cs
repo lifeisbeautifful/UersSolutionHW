@@ -8,7 +8,7 @@ public class Program
         string lastName = GetLastName();
         Gender gender = GetGender();
 
-        User user1 = new User(20)
+        User user1 = new User(3)
         {
             FirstName = firstName,
             Lastname = lastName,

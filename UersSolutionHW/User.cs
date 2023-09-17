@@ -10,11 +10,11 @@
     {
         public string FirstName { get; init; }
         public string Lastname { get; init; }
-        public int Age { get; init; }
+        public UInt32 Age { get; init; }
         public Gender UserGender { get; set; }
 
         public User() { }
-        public User(int age)
+        public User(UInt32 age)
         {
             Age = age;
         }
@@ -28,5 +28,6 @@
                               $"I am {Age} years old. I am {UserGender}.";
 
         }
+
     }
 }
